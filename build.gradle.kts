@@ -1,11 +1,11 @@
 plugins {
   id("java")
   id("org.jetbrains.kotlin.jvm") version "1.7.20"
-  id("org.jetbrains.intellij") version "1.13.1"
+  id("org.jetbrains.intellij") version "1.16.1"
 }
 
 group = "com.wcase6"
-version = "1.0-SNAPSHOT"
+version = "1.0.1"
 
 repositories {
   mavenCentral()
@@ -32,7 +32,7 @@ tasks {
 
   patchPluginXml {
     sinceBuild.set("222")
-    untilBuild.set("232.*")
+    untilBuild.set("233.*")
   }
 
   signPlugin {
