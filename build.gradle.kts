@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.wcase6"
-version = "1.0.2"
+version = "1.0.3"
 
 repositories {
   mavenCentral()
@@ -23,16 +23,16 @@ intellij {
 tasks {
   // Set the JVM compatibility versions
   withType<JavaCompile> {
-    sourceCompatibility = "11"
-    targetCompatibility = "11"
+    sourceCompatibility = "17"
+    targetCompatibility = "17"
   }
   withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    kotlinOptions.jvmTarget = "11"
+    kotlinOptions.jvmTarget = "17"
   }
 
   patchPluginXml {
     sinceBuild.set("222")
-    untilBuild.set("241.*")
+    untilBuild.set("242.*")
   }
 
   signPlugin {
