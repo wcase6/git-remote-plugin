@@ -4,7 +4,7 @@ import com.intellij.notification.NotificationGroupManager;
 import com.intellij.notification.NotificationType;
 import com.intellij.openapi.project.Project;
 
-public class OpenGetRemoteNotifier {
+public class OpenGitRemoteNotifier {
 
     public static void notifyError(Project project, String content) {
         NotificationGroupManager.getInstance()

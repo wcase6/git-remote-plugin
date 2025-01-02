@@ -19,18 +19,18 @@ public class OpenGitRemoteAction extends AnAction {
     @Override
     public void actionPerformed(AnActionEvent e) {
         if (e.getProject() == null) {
-            OpenGetRemoteNotifier.notifyError(null, "Unable to identify project for this file");
+            OpenGitRemoteNotifier.notifyError(null, "Unable to identify project for this file");
             return;
         }
 
         if (e.getProject().getBasePath() == null) {
-            OpenGetRemoteNotifier.notifyError(e.getProject(), "Unable to get base path for this project");
+            OpenGitRemoteNotifier.notifyError(e.getProject(), "Unable to get base path for this project");
             return;
         }
 
         PsiFile file = e.getData(CommonDataKeys.PSI_FILE);
         if (file == null || !file.isValid()) {
-            OpenGetRemoteNotifier.notifyError(e.getProject(), "The requested file is null or invalid");
+            OpenGitRemoteNotifier.notifyError(e.getProject(), "The requested file is null or invalid");
             return;
         }
 
@@ -39,7 +39,7 @@ public class OpenGitRemoteAction extends AnAction {
         Optional<GitRepository> repository = repositoryManager.getRepositories().stream().findFirst();
 
         if (repository.isEmpty()) {
-            OpenGetRemoteNotifier.notifyError(e.getProject(), "Unable to determine git repository");
+            OpenGitRemoteNotifier.notifyError(e.getProject(), "Unable to determine git repository");
             return;
         }
 
@@ -49,7 +49,7 @@ public class OpenGitRemoteAction extends AnAction {
                         .findFirst();
 
         if (url.isEmpty()) {
-            OpenGetRemoteNotifier.notifyError(null, "Unable to determine remote git url");
+            OpenGitRemoteNotifier.notifyError(null, "Unable to determine remote git url");
             return;
         }
 
