@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.wcase6"
-version = "1.0.5"
+version = "1.0.6"
 
 repositories {
   mavenCentral()
@@ -32,7 +32,7 @@ tasks {
 
   patchPluginXml {
     sinceBuild.set("222")
-    untilBuild.set("251.*")
+    untilBuild.set("252.*")
   }
 
   signPlugin {
